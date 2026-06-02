@@ -1,0 +1,12 @@
+### Data Quality Summary – AMFI Code Validation
+
+A validation check was performed between `01_fund_master.csv` and `02_nav_history.csv` using the `amfi_code` field as the primary key.
+
+Results:
+
+* Total schemes in fund_master: 40
+* Total unique AMFI codes in NAV history: 40
+* Missing AMFI codes: 0
+
+Conclusion:
+All AMFI codes present in the fund master dataset were successfully found in the NAV history dataset. This confirms referential integrity between the master and transactional NAV datasets and indicates that all schemes have corresponding historical NAV records available for downstream analytics and performance calculations.
