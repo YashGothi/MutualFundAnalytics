@@ -50,6 +50,23 @@ def fetch_scheme_nav(scheme_code, scheme_label):
     print(df.head())
 
 
+def fetch_all_schemes():
+    """Fetch NAV data for all configured schemes."""
+    print("\n" + "=" * 70)
+    print("FETCHING MULTIPLE SCHEMES NAV DATA")
+    print("=" * 70)
+    
+    for scheme_code, scheme_label in SCHEMES.items():
+        try:
+            fetch_scheme_nav(scheme_code, scheme_label)
+        except Exception as e:
+            print(f"\n✗ Error fetching {scheme_label} (Code: {scheme_code}): {e}")
+
+
+if __name__ == "__main__":
+    fetch_all_schemes()
+
+
 def main():
     for scheme_code, scheme_label in SCHEMES.items():
         fetch_scheme_nav(scheme_code, scheme_label)
