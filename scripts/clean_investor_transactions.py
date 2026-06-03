@@ -78,10 +78,6 @@ def clean_investor_transactions():
     print(f"Final Shape: {df.shape}")
     print(f"Saved cleaned file to: {OUTPUT_FILE}")
 
-
-if __name__ == "__main__":
-    clean_investor_transactions()
-
     print("\nTransaction Type Counts:")
     print(df["transaction_type"].value_counts())
 
