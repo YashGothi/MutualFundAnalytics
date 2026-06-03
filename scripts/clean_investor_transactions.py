@@ -1,7 +1,6 @@
 from pathlib import Path
 import pandas as pd
 
-
 RAW_FILE = Path("data/raw/08_investor_transactions.csv")
 OUTPUT_DIR = Path("data/processed")
 OUTPUT_FILE = OUTPUT_DIR / "clean_investor_transactions.csv"
@@ -86,7 +85,6 @@ def clean_investor_transactions():
 
     print("\nFirst 5 rows:")
     print(df.head())
-
 
 if __name__ == "__main__":
     clean_investor_transactions()
