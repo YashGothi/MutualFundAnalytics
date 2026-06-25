@@ -3,3 +3,10 @@ __pycache__/
 *.pyc
 *.db
 .ipynb_checkpoints/
+
+# Microsoft Office temporary files
+~$*
+
+# Python cache
+__pycache__/
+*.pyc
