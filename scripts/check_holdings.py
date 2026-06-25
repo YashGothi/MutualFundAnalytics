@@ -11,7 +11,10 @@ Project: Mutual Fund Analytics Platform
 
 import pandas as pd
 
-nav = pd.read_csv("data/processed/clean_nav_history.csv")
+df = pd.read_csv("data/raw/09_portfolio_holdings.csv")
 
-print(nav.columns.tolist())
-print(nav.head())
+print("Columns:")
+print(df.columns.tolist())
+
+print("\nFirst 5 rows:")
+# print(df.head())

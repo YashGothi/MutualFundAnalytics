@@ -1,3 +1,14 @@
+"""
+Script: data_ingestion.py
+
+Description:
+Loads all raw mutual fund datasets, performs data quality validation,
+and generates a comprehensive data quality report.
+
+Author: Yash Gothi
+Project: Mutual Fund Analytics Platform
+"""
+
 from pathlib import Path
 import pandas as pd
 from sqlalchemy import create_engine, inspect
@@ -47,11 +58,10 @@ def load_datasets_to_sqlite():
     
     # Create SQLite engine
     try:
-        engine = create_engine(DATABASE_URL, echo=False)
-        print(f"\n✓ Connected to SQLite database: {DB_PATH}")
+        engine = create_engine("sqlite:///data/processed/bluestock_mf.db")
     except Exception as e:
-        print(f"✗ Error connecting to database: {e}")
-        return False
+        print(f"Database connection failed: {e}")
+        return
     
     # Create processed data directory if it doesn't exist
     PROCESSED_DATA_DIR.mkdir(parents=True, exist_ok=True)

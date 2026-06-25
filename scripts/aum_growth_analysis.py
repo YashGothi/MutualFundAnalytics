@@ -1,3 +1,15 @@
+"""
+Script: data_ingestion.py
+
+Description:
+Loads all raw mutual fund datasets, performs data quality validation,
+and generates a comprehensive data quality report.
+
+Author: Yash Gothi
+Project: Mutual Fund Analytics Platform
+"""
+
+
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt

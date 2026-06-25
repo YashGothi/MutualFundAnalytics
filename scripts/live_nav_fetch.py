@@ -1,3 +1,14 @@
+"""
+Script: data_ingestion.py
+
+Description:
+Loads all raw mutual fund datasets, performs data quality validation,
+and generates a comprehensive data quality report.
+
+Author: Yash Gothi
+Project: Mutual Fund Analytics Platform
+"""
+
 from pathlib import Path
 import requests
 import pandas as pd
@@ -7,10 +18,13 @@ URL = "https://api.mfapi.in/mf/125497"
 OUTPUT_DIR = Path("data/raw")
 OUTPUT_FILE = OUTPUT_DIR / "hdfc_top_100_live_nav.csv"
 
-
 def fetch_live_nav():
-    response = requests.get(URL, timeout=30)
-    response.raise_for_status()
+    try:
+        response = requests.get(URL, timeout=30)
+        response.raise_for_status()
+    except requests.RequestException as e:
+        print(f"API request failed: {e}")
+        return
 
     json_data = response.json()
 
