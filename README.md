@@ -205,6 +205,9 @@ The Power BI dashboard provides:
 * Geographic Insights
 * Portfolio Diversification
 
+- Interactive dashboard: `bluestock_mf_dashboard.pbix`
+- Dashboard PDF: `reports/Mutual_Fund_Analytics_Dashboard.pdf`
+
 To open the dashboard:
 
 1. Install Microsoft Power BI Desktop.
